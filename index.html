@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人信息卡片</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换页面主题">
+    切换主题
+  </button>
+
+  <main class="page-shell">
+    <section class="hero">
+      <p class="hero-tag">Advanced Web Homework</p>
+      <h1>个人信息卡片</h1>
+      <p class="hero-text">使用 HTML、CSS 和 JavaScript 完成一个可编辑、可保存、可上传头像的个人展示页面。</p>
+    </section>
+
+    <section class="profile-card" aria-label="个人信息卡片">
+      <div class="card-preview">
+        <div class="avatar-wrapper">
+          <img
+            id="profileAvatar"
+            class="profile-avatar"
+            src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23ffb36b'/%3E%3Cstop offset='1' stop-color='%23ff6b6b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='120' height='120' rx='60' fill='url(%23g)'/%3E%3Ccircle cx='60' cy='45' r='22' fill='rgba(255,255,255,0.9)'/%3E%3Cpath d='M28 97c5-15 18-24 32-24s27 9 32 24' fill='rgba(255,255,255,0.9)'/%3E%3C/svg%3E"
+            alt="个人头像"
+          >
+          <label class="upload-chip" for="avatarInput">更换头像</label>
+        </div>
+
+        <div class="profile-text">
+          <span class="badge">信息预览</span>
+          <h2 id="displayName">&#24352;&#26195;&#26216;</h2>
+          <p id="displayBio">热爱前端开发，喜欢把普通页面做得更清晰、更好看，也更有交互感。</p>
+        </div>
+      </div>
+
+      <div class="editor-panel">
+        <div class="field-group">
+          <label for="nameInput">姓名</label>
+          <input id="nameInput" type="text" maxlength="20" value="&#24352;&#26195;&#26216;" placeholder="请输入你的姓名">
+        </div>
+
+        <div class="field-group">
+          <label for="bioInput">个人简介</label>
+          <textarea
+            id="bioInput"
+            rows="4"
+            maxlength="80"
+            placeholder="请输入你的个人简介"
+          >热爱前端开发，喜欢把普通页面做得更清晰、更好看，也更有交互感。</textarea>
+        </div>
+
+        <div class="field-group">
+          <label for="avatarInput">上传头像</label>
+          <input id="avatarInput" type="file" accept="image/*">
+          <small class="hint" id="fileHint">支持 JPG、PNG、GIF 等常见图片格式。</small>
+        </div>
+
+        <div class="action-row">
+          <button class="save-button" id="saveButton" type="button">保存信息</button>
+          <span class="save-status" id="saveStatus" aria-live="polite">未保存</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
